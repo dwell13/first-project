@@ -3,7 +3,7 @@
 
 <head>
 <link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 <style>
 h1{
@@ -26,6 +26,28 @@ div {
   border-radius: 13px;
  }
  
+  @media(max-width:500px){
+ body{
+ background:red;
+ background-size:100%;
+ }
+ h1{
+ font-size:50px;
+ }
+ div{
+ background-size:100%;
+ margin:20px 0px 0px 12px;
+ }
+ p{
+ font-size:18px;
+ line-height:24px;
+ 
+ }
+ small{
+ font-size:16px;
+ }
+ }
+  
 .momo {
 background-image:url("assets/images/momo.jpg");
 background-size: cover;
@@ -49,6 +71,15 @@ small{
 opacity:0;
 }
 
+  .show-description p{
+  height: 250px;
+}
+
+.show-description small{
+  opacity: 1;
+}
+
+  
 .burger{
 background-image:url("assets/images/burger.jpg");
 background-size:cover;
@@ -93,5 +124,10 @@ and clearly rustic in their origin.  No one knows precisely how
  tomato sauce and cheese and baked in an oven. It is commonly
  topped with a selection of meats, vegetables and condiments.
  </small></p></div>
- 
+ <script>
+$('div').on('click', function () {
+  $(this).toggleClass('show-description')
+  });
+  </script>
 </body>
+
